@@ -3,7 +3,7 @@ const PayoutRates = ({ rates, onRateChange }) => {
     const { name, value } = e.target;
     onRateChange({
       ...rates,
-      [name]: parseFloat(value) || 0
+      [name]: parseFloat(value) || 0,
     });
   };
 
@@ -14,9 +14,11 @@ const PayoutRates = ({ rates, onRateChange }) => {
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Base Rate (per article)
-          </label>
+          </label>{" "}
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              $
+            </span>
             <input
               type="number"
               name="baseRate"
@@ -34,7 +36,9 @@ const PayoutRates = ({ rates, onRateChange }) => {
             Premium Rate (per article)
           </label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+              $
+            </span>
             <input
               type="number"
               name="premiumRate"
@@ -51,4 +55,4 @@ const PayoutRates = ({ rates, onRateChange }) => {
   );
 };
 
-export default PayoutRates; 
+export default PayoutRates;
