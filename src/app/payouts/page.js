@@ -4,6 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import PayoutRates from "@/components/PayoutRates";
 import PayoutCalculator from "@/components/PayoutCalculator";
 import PayoutExport from "@/components/PayoutExport";
+import Header from "@/components/Header";
 
 export default function PayoutPage() {
   const [news, setNews] = useState([]);
@@ -95,6 +96,7 @@ export default function PayoutPage() {
 
   return (
     <div className="min-h-screen bg-background">
+        <Header/>
       <div className="flex h-screen pt-16">
         <Sidebar />
         <main className="flex-1 ml-64 flex flex-col h-screen">

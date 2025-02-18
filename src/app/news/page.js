@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar';
 import NewsCard from '@/components/NewsCard';
 import ErrorPage from '@/components/ErrorPage';
 import NewsFilters from '@/components/NewsFilters';
+import Header from '@/components/Header';
 
 export default function NewsPage() {
   const [news, setNews] = useState([]);
@@ -110,6 +111,7 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+        <Header/>
       <div className="flex h-screen pt-16">
         <Sidebar />
         <main className="flex-1 ml-64 flex flex-col h-screen">

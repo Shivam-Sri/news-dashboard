@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ErrorPage from '@/components/ErrorPage';
 import DashboardStats from '@/components/DashboardStats';
+import Header from '@/components/Header';
 import ArticleCharts from '@/components/ArticleCharts';
 
 export default function DashboardPage() {
@@ -53,6 +54,7 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-background">
+        <Header/>
       <div className="flex h-screen pt-16">
         <Sidebar />
         <main className="flex-1 ml-64 p-8">
