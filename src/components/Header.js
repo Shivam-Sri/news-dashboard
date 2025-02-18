@@ -1,6 +1,6 @@
-import { useAuth } from '@/contexts/AuthContext';
-import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useAuth } from "@/contexts/AuthContext";
+import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -15,13 +15,13 @@ export default function Header() {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleLogout = async () => {
     await logout();
-    router.push('/login');
+    router.push("/login");
   };
 
   return (
@@ -29,12 +29,12 @@ export default function Header() {
       <div className="h-full px-4 flex items-center justify-end">
         {user && (
           <div className="relative">
-            <div 
+            <div
               className="flex items-center space-x-3 cursor-pointer"
               onClick={() => setShowOverlay(!showOverlay)}
             >
               <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                {user.name}
+                {user?.email}
               </span>
               <div className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                 {user.name ? (
@@ -54,7 +54,7 @@ export default function Header() {
             </div>
 
             {showOverlay && (
-              <div 
+              <div
                 ref={overlayRef}
                 className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 border border-gray-200 dark:border-gray-700 z-50"
               >
@@ -71,4 +71,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}
